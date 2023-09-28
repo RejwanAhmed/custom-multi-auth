@@ -1,0 +1,32 @@
+:root {
+    --login-header: rgba(37, 37, 37, 0.918);
+    --btn-color-hover: rgb(245, 222, 19);
+    --btn-color: rgb(0, 0, 0);
+}
+
+.admin-login-header {
+    background-color: var(--login-header);
+
+}
+.btn-color {
+    background-color: var(--btn-color);
+    color: white;
+    font-weight: bold;
+}
+.btn:first-child:hover,
+:not(.btn-check) + .btn:hover {
+    background-color: var(--btn-color-hover);
+    border-color: var(--btn-color-hover);
+    font-weight: bold;
+}
+.nav-link:focus,
+.nav-link {
+    color: var(--btn-color-hover);
+    font-size: 20px;
+}
+.nav-link:focus,
+.nav-link:hover {
+    background-color: var(--btn-color);
+    color: white;
+    border-radius: 5px;
+}
