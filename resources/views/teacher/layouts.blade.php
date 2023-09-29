@@ -16,23 +16,24 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-            <a class="navbar-brand border p-2 border-2 rounded " href="{{ route('admin.dashboard') }}">Welcome, Admin</a>
+            <a class="navbar-brand border p-2 border-2 rounded " href="{{ route('teacher.dashboard') }}">Welcome,
+                Teacher</a>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav me-auto  mt-2 mt-lg-0 text-white">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.dashboard') }}" >Home</a>
+                        <a class="nav-link" href="{{ route('teacher.dashboard') }}">Home</a>
+                    </li>
+                    {{-- <li class="nav-item">
+                        <a class="nav-link " href="{{ route('teacher.show') }}">Student</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="{{ route('admin.student.show') }}">Student</a>
-                    </li>
+                        <a class="nav-link " href="{{ route('teacher.teacher.show') }}">Teacher</a>
+                    </li> --}}
                     <li class="nav-item">
-                        <a class="nav-link " href="{{ route('admin.teacher.show') }}">Teacher</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="{{ route('admin.logout') }}">Logout</a>
+                        <a class="nav-link " href="{{ route('teacher.logout') }}">Logout</a>
                     </li>
                 </ul>
             </div>

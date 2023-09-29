@@ -1,15 +1,14 @@
 @extends('admin.layouts')
-@section('title', 'Student')
+@section('title', 'Teacher')
 
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12 text-center mt-2 mb-2">
-                <h2>Student Form <span><a class="float-start btn btn-secondary fw-bold mt-1"
-                            href="{{ route('admin.student.show') }}">Back</a></span></h2>
+                <h2>Teacher Form <span><a class="float-start btn btn-secondary fw-bold mt-1" href="{{ route('admin.teacher.show') }}">Back</a></span></h2>
             </div>
         </div>
-        <form action="{{ route('admin.student.store') }}" method="POST">
+        <form action="{{ route('admin.teacher.store') }}" method="POST">
             @csrf
             <div class="row justify-content-center">
                 <div class="col-10">
@@ -24,19 +23,15 @@
                         </div>
 
                         <div class="col-lg-6 col-md-6 col-12 mb-2">
-                            <label for="" class="fw-bold">Session:</label>
-                            <input type="text" name="session" class="form-control" value="{{ old('session') }}"
-                                placeholder="Enter Your Session">
-                            @error('session')
-                                <small class="fw-bold text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-
-                        <div class="col-lg-6 col-md-6 col-12 mb-2">
-                            <label for="" class="fw-bold">Roll:</label>
-                            <input type="number" name="roll" class="form-control" value="{{ old('roll') }}"
-                                placeholder="Enter Your Roll">
-                            @error('roll')
+                            <label for="" class="fw-bold">Designation:</label>
+                            <select name="designation" id="" class = "form-control">
+                                <option value="" selected>Please Select Designation</option>
+                                <option value="Professor" @if (old('designation')=='Professor') selected  @endif>Professor</option>
+                                <option value="Associate Professor" @if (old('designation')=='Associate Professor') selected  @endif>Associate Professor</option>
+                                <option value="Assistant Professor" @if (old('designation')== 'Assistant Professor') selected  @endif>Assistant Professor</option>
+                                <option value="Lecturer" @if (old('designation')=='Lecturer') selected  @endif>Lecturer</option>
+                            </select>
+                            @error('designation')
                                 <small class="fw-bold text-danger">{{ $message }}</small>
                             @enderror
                         </div>
@@ -58,17 +53,15 @@
                                 <small class="fw-bold text-danger">{{ $message }}</small>
                             @enderror
                         </div>
+
                         <div class="row justify-content-center mt-2">
                             <div class="col-lg-4 text-center">
                                 <button class = "btn btn-color">Register</button>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </form>
-
     </div>
 @endsection
